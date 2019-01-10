@@ -70,7 +70,7 @@ body {
     .btn-outline:disabled {
         background-color: $dropdown-bg !important;
     }
-    .gh-header{
+    .gh-header {
         background-color: transparent !important;
     }
     .gh-header-meta {
@@ -79,7 +79,7 @@ body {
     .gh-header-meta .author {
         color: $text-color !important;
     }
-    .gh-header .gh-header-sticky.is-stuck+.gh-header-shadow{
+    .gh-header .gh-header-sticky.is-stuck + .gh-header-shadow {
         background-color: $bg-color !important;
     }
     .ellipsis-expander,
@@ -153,6 +153,9 @@ body {
     }
     .dropdown-menu {
         background-color: $dropdown-bg !important;
+        .user-status-emoji-only-header {
+            background-color: $dropdown-bg !important;
+        }
     }
     .muted-link {
         color: $link-color !important;
@@ -179,12 +182,21 @@ body {
     .dropdown-item {
         color: $link-color !important;
     }
+    .user-status-message-wrapper {
+        color: $link-color !important;
+    }
+    .user-status-emoji-only-header {
+        background-color: $bg-color !important;
+    }
+    .user-status-container {
+        border: none !important;
+    }
 }
 
 .cc-ext .pagehead-actions .cc-classic-cta a {
     border-color: $border-color !important;
 }
 
-.pagehead-actions>li {
+.pagehead-actions > li {
     color: $bright-text-color !important;
 }
