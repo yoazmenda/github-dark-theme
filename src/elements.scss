@@ -79,6 +79,9 @@ body {
     .gh-header-meta .author {
         color: $text-color !important;
     }
+    .gh-header .gh-header-sticky.is-stuck+.gh-header-shadow{
+        background-color: $bg-color !important;
+    }
     .ellipsis-expander,
     .hidden-text-expander a {
         background: $tag-bg-color !important;
