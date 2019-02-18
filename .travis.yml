@@ -6,3 +6,4 @@ cache: yarn
 after_success:
   - yarn build
   - yarn upload
+  - bash scripts/upload-amo.sh

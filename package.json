@@ -5,7 +5,8 @@
   "author": "Poy Chang <poypost@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "npm": "^6.8.0"
+    "npm": "^6.8.0",
+    "web-ext": "^2.9.3"
   },
   "devDependencies": {
     "bestzip": "^1.1.4",
