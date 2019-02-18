@@ -4,6 +4,8 @@
 
 [![Download Extension from Chrome Web Store](https://i.imgur.com/yF81YSi.png)](https://chrome.google.com/webstore/detail/github-dark-theme/odkdlljoangmamjilkamahebpkgpeacp)
 
+[![Download Extension from Firefox Add-ons](https://i.imgur.com/1ONs3pz.jpg)](https://addons.mozilla.org/addon/github-dark-theme/)
+
 This package will change appearance of all Github pages to dark theme, mostly based on Atom One Dark.
 
 ```
