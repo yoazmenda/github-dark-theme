@@ -89,6 +89,9 @@ body {
     a {
         color: $link-color !important;
     }
+    .link-gray {
+        color: $faded-link-color !important;
+    }
     .link-gray-dark,
     body .link-gray-dark {
         color: $link-color !important;
