@@ -1,20 +1,31 @@
 {
   "name": "github-dark-theme",
-  "version": "0.9",
-  "repository": "git@github.com:vovanmix/github-dark-theme.git",
-  "author": "Vladimir Mikhaylovskiy <vlad@indiegogo.com>",
+  "version": "0.9.25",
+  "repository": "git@github.com:poychang/github-dark-theme.git",
+  "author": "Poy Chang <poypost@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "npm": "^6.8.0",
+    "web-ext": "^2.9.3"
+  },
+  "devDependencies": {
+    "bestzip": "^1.1.4",
     "css-loader": "^0.28.1",
     "extract-text-webpack-plugin": "^2.1.0",
-    "less": "^2.7.2",
-    "less-loader": "^4.0.3",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^6.0.7",
     "style-loader": "^0.17.0",
-    "webpack": "^2.4.1"
+    "webpack": "^2.4.1",
+    "webstore-upload": "^0.0.8",
+    "zip-folder": "^1.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "assemble": "webpack",
-    "build": "webpack && rm ./github.zip || echo 'nothing to remove' && cd dist && zip -r ../github.zip ./ && cd ../ && cp ./dist/app/app.css ./safari-dark-github.safariextension/app.css && echo 'build done!'"
+    "build": "webpack && node scripts/zip.js",
+    "build-safari": "webpack && cp ./dist/app/app.css ./safari-dark-github.safariextension/app.css",
+    "zip": "node scripts/zip.js",
+    "upload": "node scripts/upload.js",
+    "version+": "node scripts/version+.js"
   }
 }
