@@ -2,7 +2,9 @@ language: node_js
 node_js:
   - "8"
 
-after_success:
+script:
   - npm run build
+
+after_success:
   - npm run upload
   - bash scripts/upload-amo.sh
