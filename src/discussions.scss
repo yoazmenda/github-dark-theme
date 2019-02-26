@@ -15,6 +15,9 @@ body {
     .discussion-item-header {
         color: $text-color !important;
     }
+    .discussion-sidebar-item {
+        color: $faded-link-color !important;
+    }
     .discussion-item+.discussion-item-review {
         border-color: $border-color !important;
     }
