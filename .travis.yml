@@ -1,9 +1,8 @@
 language: node_js
 node_js:
   - "8"
-cache: yarn
 
 after_success:
-  - yarn build
-  - yarn upload
+  - npm run build
+  - npm run upload
   - bash scripts/upload-amo.sh
