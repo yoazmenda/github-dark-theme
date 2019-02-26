@@ -181,4 +181,9 @@ body {
             color: $text-black-color !important;
         }
     }
+
+    .pagination-loader-container {
+        background-color: $bg-color !important;
+        background-image: url('./img/progressive-disclosure-line@2x.png') !important;
+    }
 }
