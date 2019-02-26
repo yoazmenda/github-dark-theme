@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Github Dark Theme",
   "short_name": "Github Dark Theme",
-  "description": "How to protect your eyes from computer screens?",
+  "description": "A Dark theme for all of Github based on Atom One Dark.",
   "version": "0.9.26",
   "applications": {
     "gecko": {
