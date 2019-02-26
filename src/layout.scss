@@ -382,4 +382,7 @@ body {
     .application-main .flex-wrap{
         background-color: $bg-color !important;
     }
+    .note, .help {
+        color: $faded-link-color !important;
+    }
 }
