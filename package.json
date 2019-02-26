@@ -7,7 +7,7 @@
     "Poy Chang <poypost@gmail.com>",
     "Vladimir Mikhaylovskiy <vlad@indiegogo.com>",
     "Vinyl Darkscratch <vinyldarkscratch@gmail.com> (https://www.queengoob.org)"
-  ]
+  ],
   "license": "MIT",
   "dependencies": {
     "npm": "^6.8.0",
