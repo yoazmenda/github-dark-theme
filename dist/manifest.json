@@ -12,8 +12,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://github.com/*",
-        "https://gist.github.com/*"
+        "https://*.github.com/*"
       ],
       "run_at": "document_start",
       "css": [
