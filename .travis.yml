@@ -5,6 +5,8 @@ node_js:
 script:
   - npm run build
 
-after_success:
-  - npm run upload
-  - bash scripts/upload-amo.sh
+deploy:
+  - provider: script
+    script: npm run upload; bash scripts/upload-amo.sh
+    on:
+      branch: master
