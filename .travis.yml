@@ -7,6 +7,7 @@ script:
 
 deploy:
   - provider: script
+    skip_cleanup: true
     script: npm run upload; bash scripts/upload-amo.sh
     on:
       branch: master
