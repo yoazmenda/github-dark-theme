@@ -30,8 +30,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "assemble": "webpack",
-    "build": "webpack && node scripts/zip.js",
-    "build-safari": "webpack && cp ./dist/app/app.css ./safari-dark-github.safariextension/app.css",
+    "build": "webpack && node scripts/zip.js && cp ./dist/app/app.css ./safari-dark-github.safariextension/app.css",
     "zip": "node scripts/zip.js",
     "upload": "node scripts/upload.js",
     "version+": "node scripts/version+.js"
