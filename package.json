@@ -1,8 +1,13 @@
 {
   "name": "github-dark-theme",
-  "version": "0.9.25",
+  "version": "0.9.26",
   "repository": "git@github.com:poychang/github-dark-theme.git",
-  "author": "Poy Chang <poypost@gmail.com>",
+  "author": "Vladimir Mikhaylovskiy <vlad@indiegogo.com>",
+  "contributors": [
+    "Poy Chang <poypost@gmail.com>",
+    "Vladimir Mikhaylovskiy <vlad@indiegogo.com>",
+    "Vinyl Darkscratch <vinyldarkscratch@gmail.com> (https://www.queengoob.org)"
+  ],
   "license": "MIT",
   "dependencies": {
     "npm": "^6.8.0",
@@ -15,6 +20,7 @@
     "node-sass": "^4.11.0",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.17.0",
+    "url-loader": "^1.1.2",
     "webpack": "^2.4.1",
     "webstore-upload": "^0.0.8",
     "zip-folder": "^1.0.0"
