@@ -104,6 +104,9 @@ body {
         background-color: $bg-color !important;
         color: $bright-text-color !important;
     }
+    .discussion-item .renamed-is, .discussion-item .renamed-was {
+        color: $bright-text-color !important;
+    }
     .branch-action-body {
         background-color: $bg-color !important;
         border-color: $border-color !important;
