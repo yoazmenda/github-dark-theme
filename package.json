@@ -1,6 +1,6 @@
 {
   "name": "github-dark-theme",
-  "version": "0.9.29",
+  "version": "0.9.30",
   "repository": "git@github.com:poychang/github-dark-theme.git",
   "author": "Poy Chang <poypost@gmail.com>",
   "contributors": [
@@ -13,10 +13,10 @@
   "license": "MIT",
   "dependencies": {
     "npm": "^6.8.0",
-    "web-ext": "^2.9.3"
+    "web-ext": "^3.0.0"
   },
   "devDependencies": {
-    "bestzip": "^1.1.4",
+    "bestzip": "^2.1.2",
     "css-loader": "^0.28.1",
     "extract-text-webpack-plugin": "^2.1.0",
     "node-sass": "^4.11.0",
