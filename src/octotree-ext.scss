@@ -1,7 +1,17 @@
 /* # Octotree Extension */
 
-.octotree_sidebar .octotree_bottom {
-    background-color: $dropdown-bg !important;
-    border-top: 1px solid $border-color !important;
-    border-right: 1px solid $border-color !important;
+.octotree_sidebar {
+    .octotree_toggle {
+        color: $faded-link-color !important;
+    }
+
+    .octotree_opts .settings::before {
+        color: $text-color !important;
+    }
+
+    .octotree_bottom {
+        background-color: $dropdown-bg !important;
+        border-top: 1px solid $border-color !important;
+        border-right: 1px solid $border-color !important;
+    }
 }
