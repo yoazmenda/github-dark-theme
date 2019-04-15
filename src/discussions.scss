@@ -105,6 +105,9 @@ body {
     .review-summary::before {
         border-bottom-color: $tag-bg-color !important;
     }
+    .review-summary-form-wrapper {
+        background-color: $comment-bg !important;
+    }
     .discussion-timeline-actions {
         background-color: $bg-color !important;
         border-color: $border-color !important;
