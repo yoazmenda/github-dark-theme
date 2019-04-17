@@ -86,7 +86,7 @@ body {
         background-color: $dropdown-bg !important;
         border-color: $border-color !important;
     }
-    a:not(.IssueLabel):not(.IssueLabel--big):not(.text-red):not(.text-green) {
+    a:not(.IssueLabel):not(.IssueLabel--big) {
         color: $link-color !important;
     }
     div.commit-build-statuses {
