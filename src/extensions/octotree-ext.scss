@@ -5,10 +5,7 @@
         background-color: $dropdown-bg !important;
         border-right: 0 solid !important;
         .octotree-tree-view {
-            .jstree-default
-                .jstree-no-dots
-                .jstree-closed
-                > .jstree-ocl::before {
+            .jstree-default .jstree-no-dots .jstree-closed > .jstree-ocl::before {
                 color: $bright-text-color !important;
             }
             .jstree-anchor {
@@ -19,6 +16,11 @@
             }
             .jstree-wholerow-hovered {
                 background: $dropdown-bg-active !important;
+            }
+        }
+        .octotree-settings-view {
+            .octotree-view-body {
+                color: $bright-text-color !important;
             }
         }
     }
