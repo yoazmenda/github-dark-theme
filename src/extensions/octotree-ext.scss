@@ -3,10 +3,20 @@
 .octotree-sidebar.octotree-github-sidebar {
     .octotree-views {
         background-color: $dropdown-bg !important;
-        border-right: 0 solid !important;
+        border: 0 solid !important;
+        border-right: 1px solid $dropdown-bg-active !important;
+
         .octotree-tree-view {
-            .jstree-default .jstree-no-dots .jstree-closed > .jstree-ocl::before {
-                color: $bright-text-color !important;
+            .octotree-view-header {
+                background-color: $head-bg !important;
+                border: 0 solid !important;
+                border-right: 1px solid $dropdown-bg-active !important;
+            }
+            .jstree-default {
+                .jstree-closed > .jstree-ocl::before,
+                .jstree-open > .jstree-ocl::before {
+                    color: $bright-text-color !important;
+                }
             }
             .jstree-anchor {
                 color: $bright-text-color !important;
@@ -24,4 +34,10 @@
             }
         }
     }
+}
+
+.octotree-footer {
+    background-color: $head-bg !important;
+    border: 0 solid !important;
+    border-right: 1px solid $dropdown-bg-active !important;
 }
