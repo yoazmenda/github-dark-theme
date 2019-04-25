@@ -12,20 +12,24 @@
                 border: 0 solid !important;
                 border-right: 1px solid $dropdown-bg-active !important;
             }
-            .jstree-default {
-                .jstree-closed > .jstree-ocl::before,
-                .jstree-open > .jstree-ocl::before {
-                    color: $bright-text-color !important;
+            .octotree-view-body{
+                .jstree-container-ul {
+                    .jstree-closed > .jstree-ocl::before,
+                    .jstree-open > .jstree-ocl::before {
+                        color: $bright-text-color !important;
+                    }
+                    .jstree-node {
+                        .jstree-wholerow-clicked {
+                            background: $dropdown-bg-active !important;
+                        }
+                        .jstree-wholerow-hovered {
+                            background: $dropdown-bg-active !important;
+                        }
+                        .jstree-anchor {
+                            color: $link-color !important;
+                        }
+                    }
                 }
-            }
-            .jstree-anchor {
-                color: $bright-text-color !important;
-            }
-            .jstree-wholerow-clicked {
-                background: $dropdown-bg-active !important;
-            }
-            .jstree-wholerow-hovered {
-                background: $dropdown-bg-active !important;
             }
         }
         .octotree-settings-view {
