@@ -131,6 +131,10 @@ body {
                 background-color: $border-color !important;
             }
         }
+
+        .select-menu-item-text pre {
+            color: $text-color !important;
+        }
     }
     .label-select-menu .select-menu-item.js-navigation-item.selected {
         background: $tag-bg-color !important;
