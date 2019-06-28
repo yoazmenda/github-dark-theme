@@ -9,7 +9,11 @@
 }
 
 /* # Insights Contributors */
-.viz, .capped-card-content, .graph-canvas{
+
+.tint-box {
+    background: $comment-bg !important;
+}
+.capped-card-content {
     background: $comment-bg !important;
 }
 
