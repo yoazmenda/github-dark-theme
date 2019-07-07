@@ -12,18 +12,19 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "npm": "^6.9.0",
-    "web-ext": "^3.0.0"
+    "npm": "^6.10.0",
+    "web-ext": "^3.1.0"
   },
   "devDependencies": {
-    "bestzip": "^2.1.2",
-    "css-loader": "^0.28.1",
-    "extract-text-webpack-plugin": "^2.1.0",
+    "bestzip": "^2.1.4",
+    "css-loader": "^3.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "node-sass": "^4.12.0",
-    "sass-loader": "^6.0.7",
-    "style-loader": "^0.17.0",
-    "url-loader": "^1.1.2",
-    "webpack": "^2.4.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.0.1",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
     "webstore-upload": "^0.0.8",
     "zip-folder": "^1.0.0"
   },
