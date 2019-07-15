@@ -280,11 +280,11 @@ body {
             &.selected {
                 color: $link-color !important;
                 border-color: $border-color !important;
-                background: $comment-bg !important;
+                background: $bg-color !important;
             }
             &:focus,
             &:hover {
-                color: $link-color !important;
+                color: $link-color-selected !important;
             }
             .Counter {
                 color: $link-color !important;
