@@ -1,7 +1,9 @@
 var dev = process.env.NODE_ENV != 'production';
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyPlugin = require('copy-webpack-plugin');
 
 var extractCSS = new ExtractTextPlugin('app.css');
+var copyPages = new CopyPlugin([{ from: 'src/popup', to: 'popup' }]);
 
 var config = {
     entry: __dirname + '/src/theme/app.scss',
@@ -31,7 +33,7 @@ var config = {
     resolve: {
         modules: ['node_modules']
     },
-    plugins: [extractCSS]
+    plugins: [extractCSS, copyPages]
 };
 
 var firefoxConfig = Object.assign({}, config, {
