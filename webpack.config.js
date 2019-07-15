@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var extractCSS = new ExtractTextPlugin('app.css');
 
 var config = {
-    entry: __dirname + '/src/app.scss',
+    entry: __dirname + '/src/theme/app.scss',
     output: {
         path: __dirname + '/dist/app',
         filename: 'app.js'
