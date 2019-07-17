@@ -1,0 +1,8 @@
+github.zip
+npm-debug.log
+node_modules/
+tmp/
+dist/
+dist-chrome/
+dist-firefox/
+dist-safari/

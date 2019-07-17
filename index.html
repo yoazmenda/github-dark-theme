@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Github Dark Theme</title>
+        <link href="css/foundation.css" rel="stylesheet" type="text/css" />
+        <link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="top top-bar">
+            <div class="top-bar-left">
+                <ul class="menu">
+                    <li class="menu-text">GitHub Dark Theme</li>
+                    <li>
+                        <a
+                            href="https://chrome.google.com/webstore/detail/github-dark-theme/odkdlljoangmamjilkamahebpkgpeacp"
+                            >For Chrome</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://addons.mozilla.org/addon/github-dark-theme/"
+                            >For Firefox</a
+                        >
+                    </li>
+                    <li>
+                        <a href="https://github.com/poychang/github-dark-theme"
+                            >Source Code</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="large-12 columns">
+                <h1>GitHub Dark Theme</h1>
+                <h2>
+                    change appearance of all GitHub pages to a dark theme
+                </h2>
+            </div>
+            <div class="large-12 columns">
+                <div class="twentytwenty-container">
+                    <img src="img/github-before.png" />
+                    <img src="img/github-after.png" />
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom bottom-bar">
+            <div class="bottom-bar-center">
+                <img src="img/icon128.png" alt="Github Dark Theme Logo">
+            </div>
+        </div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"
+        ></script>
+        <script src="js/jquery.event.move.js"></script>
+        <script src="js/jquery.twentytwenty.js"></script>
+        <script>
+            $(function() {
+                $(
+                    ".twentytwenty-container[data-orientation!='vertical']"
+                ).twentytwenty({ default_offset_pct: 0.3 });
+                $(
+                    ".twentytwenty-container[data-orientation='vertical']"
+                ).twentytwenty({
+                    default_offset_pct: 0.3,
+                    orientation: 'vertical',
+                });
+            });
+        </script>
+    </body>
+</html>
