@@ -5,23 +5,28 @@ const uploadOptions = {
             publish: true,
             client_id: process.env.CLIENT_ID,
             client_secret: process.env.CLIENT_SECRET,
-            refresh_token: process.env.REFRESH_TOKEN
-        }
+            refresh_token: process.env.REFRESH_TOKEN,
+        },
     },
     extensions: {
         my_ext: {
             appID: process.env.APP_ID,
-            zip: `${process.cwd()}/github.zip`
-        }
+            zip: `${process.cwd()}/github.zip`,
+        },
     },
-    uploadExtensions: ['my_ext']
+    uploadExtensions: ['my_ext'],
 };
+
+console.log('----------------------------------------------------------------------');
+console.log('Upload Github Dark Theme Chrome extension to Chrome Web Store');
+console.log('----------------------------------------------------------------------');
+
 webstore_upload(uploadOptions, 'default')
-    .then(function (result) {
+    .then(function(result) {
         console.log(result);
         // do somethings nice
         return 'yay';
     })
-    .catch(function (err) {
+    .catch(function(err) {
         console.error(err);
     });

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>GitHub Dark Theme</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', 'Lucida Grande', Tahoma, sans-serif;
+                font-size: 100%;
+                width: 400px;
+            }
+        </style>
+    </head>
+    <body ng-app="app">
+        <div ng-controller="popupController as ctrl">
+            <h2>{{ ctrl.title }}</h2>
+            <!-- <input type="text" placeholder="Add Domain..." />
+            <ul>
+                <li ng-repeat="domain in ctrl.domainList">
+                    {{ domain }}
+                    <button>X</button>
+                </li>
+            </ul> -->
+        </div>
+
+        <script src="vendor.js"></script>
+        <script src="popup.js"></script>
+    </body>
+</html>

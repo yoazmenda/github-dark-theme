@@ -1,8 +1,14 @@
 const fs = require('fs');
-const versionFileList = ['./package.json', './package-lock.json', './dist/manifest.json', './dist-firefox/manifest.json'];
+const versionFileList = [
+    './package.json',
+    './package-lock.json',
+    './src/manifest/manifest-ref.json',
+    './src/manifest/manifest-chrome.json',
+    './src/manifest/manifest-firefox.json',
+];
 
 versionFileList.forEach(file => {
-    fs.readFile(file, 'utf8', function (err, data) {
+    fs.readFile(file, 'utf8', function(err, data) {
         console.log(`Increment ${file} build number`);
         if (err) {
             return console.warn(err);
@@ -18,7 +24,7 @@ versionFileList.forEach(file => {
             const newVersion = {
                 major: Number(currentVersion[0]),
                 minor: Number(currentVersion[1]),
-                build: Number(currentVersion[2]) + 1
+                build: Number(currentVersion[2]) + 1,
             };
             const targetVersion = `${newVersion.major}.${newVersion.minor}.${newVersion.build}`;
             console.log(`Current Version: ${json.version} -> Target Version: ${targetVersion}\n`);
@@ -26,6 +32,6 @@ versionFileList.forEach(file => {
         }
 
         // Write JSON
-        fs.writeFile(file, JSON.stringify(json, null, 2), err => console.warn(err ? err : ''));
+        fs.writeFile(file, JSON.stringify(json, null, 4), err => console.warn(err ? err : ''));
     });
 });

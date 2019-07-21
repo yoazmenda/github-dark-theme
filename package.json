@@ -1,40 +1,52 @@
 {
-  "name": "github-dark-theme",
-  "version": "0.9.52",
-  "repository": "git@github.com:poychang/github-dark-theme.git",
-  "author": "Poy Chang <poypost@gmail.com>",
-  "contributors": [
-    "Jeff Wu <crazy.alu@outlook.com>",
-    "Jimmy <jiaming0708@gmail.com>",
-    "Poy Chang <poypost@gmail.com>",
-    "Vladimir Mikhaylovskiy <vlad@indiegogo.com>",
-    "Vinyl Darkscratch <vinyldarkscratch@gmail.com> (https://www.queengoob.org)"
-  ],
-  "license": "MIT",
-  "dependencies": {
-    "npm": "^6.10.0",
-    "web-ext": "^3.1.0"
-  },
-  "devDependencies": {
-    "bestzip": "^2.1.4",
-    "copy-webpack-plugin": "^5.0.3",
-    "css-loader": "^3.0.0",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "url-loader": "^2.0.1",
-    "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5",
-    "webstore-upload": "^0.0.8",
-    "zip-folder": "^1.0.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\"",
-    "assemble": "webpack",
-    "build": "webpack && node scripts/zip.js && cp ./dist/app/app.css ./dist-safari/app.css",
-    "zip": "node scripts/zip.js",
-    "upload": "node scripts/upload.js",
-    "version+": "node scripts/version+.js"
-  }
+    "name": "github-dark-theme",
+    "version": "1.0.0",
+    "description": "change appearance of all GitHub pages to a dark theme",
+    "license": "MIT",
+    "author": "Poy Chang <poypost@gmail.com>",
+    "contributors": [
+        "Jeff Wu <crazy.alu@outlook.com>",
+        "Jimmy <jiaming0708@gmail.com>",
+        "Poy Chang <poypost@gmail.com>",
+        "Vladimir Mikhaylovskiy <vlad@indiegogo.com>",
+        "Vinyl Darkscratch <vinyldarkscratch@gmail.com> (https://www.queengoob.org)"
+    ],
+    "scripts": {
+        "watch": "webpack --config webpack/webpack.dev.js --watch",
+        "build": "webpack --config webpack/webpack.prod.js",
+        "build-chrome": "webpack --config webpack/webpack.chrome.js && node scripts/zip-chrome.js ",
+        "build-firefox": "webpack --config webpack/webpack.firefox.js",
+        "clean": "rimraf dist && rimraf dist-chrome && rimraf dist-firefox",
+        "version+": "node scripts/version+.js",
+        "zip-chrome": "node scripts/zip-chrome.js",
+        "upload-chrome": "node scripts/upload-chrome.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:poychang/github-dark-theme.git"
+    },
+    "dependencies": {
+        "@types/angular": "^1.6.55",
+        "angular": "^1.7.8"
+    },
+    "devDependencies": {
+        "@types/chrome": "0.0.86",
+        "@types/jquery": "^3.3.30",
+        "bestzip": "^2.1.4",
+        "copy-webpack-plugin": "^5.0.3",
+        "css-loader": "^3.0.0",
+        "extract-text-webpack-plugin": "^4.0.0-beta.0",
+        "node-sass": "^4.12.0",
+        "rimraf": "^2.6.3",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^0.23.1",
+        "ts-loader": "^5.4.5",
+        "typescript": "~3.4.5",
+        "url-loader": "^2.1.0",
+        "webpack": "~4.17.3",
+        "webpack-cli": "~3.1.2",
+        "webpack-merge": "~4.2.1",
+        "webstore-upload": "^0.0.8",
+        "zip-folder": "^1.0.0"
+    }
 }

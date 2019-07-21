@@ -1,13 +1,22 @@
 language: node_js
 node_js:
-  - "8"
-
+    - '8'
+cache:
+    directories:
+        - 'node_modules'
+install:
+    - npm install
 script:
-  - npm run build
-
+    - npm run build-chrome
+    - npm run build-firefox
 deploy:
-  - provider: script
-    skip_cleanup: true
-    script: npm run upload; bash scripts/upload-amo.sh
-    on:
-      branch: master
+    - provider: script
+      skip_cleanup: true
+      script: npm run upload-chrome
+      on:
+          branch: master
+    - provider: script
+      skip_cleanup: true
+      script: bash scripts/upload-firefox.sh
+      on:
+          branch: master
