@@ -1,6 +1,6 @@
 {
     "name": "github-dark-theme",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "change appearance of all GitHub pages to a dark theme",
     "license": "MIT",
     "author": "Poy Chang <poypost@gmail.com>",
@@ -32,6 +32,7 @@
     "devDependencies": {
         "@types/chrome": "0.0.86",
         "@types/jquery": "^3.3.30",
+        "@wext/shipit": "^0.2.0",
         "bestzip": "^2.1.4",
         "copy-webpack-plugin": "^5.0.3",
         "css-loader": "^3.0.0",
@@ -43,7 +44,6 @@
         "ts-loader": "^5.4.5",
         "typescript": "~3.4.5",
         "url-loader": "^2.1.0",
-        "web-ext": "^3.1.1",
         "webpack": "~4.17.3",
         "webpack-cli": "~3.1.2",
         "webpack-merge": "~4.2.1",
