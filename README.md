@@ -1,12 +1,12 @@
-# Github Dark Theme
+# GitHub Dark Theme
 
 [![Build Status](https://travis-ci.org/poychang/github-dark-theme.svg?branch=master)](https://travis-ci.org/poychang/github-dark-theme)
 
-[![Download Extension from Chrome Web Store](https://i.imgur.com/0Zw4GqK.png)](https://chrome.google.com/webstore/detail/github-dark-theme/odkdlljoangmamjilkamahebpkgpeacp)
+| For Chrome | For Firefox |
+| ---------- | ----------- |
+| [![For Chrome](https://i.imgur.com/0Zw4GqK.png)](https://chrome.google.com/webstore/detail/github-dark-theme/odkdlljoangmamjilkamahebpkgpeacp) | [![For Firefox](https://i.imgur.com/8oJLPg3.jpg)](https://addons.mozilla.org/addon/github-dark-theme/) |
 
-[![Download Extension from Firefox Add-ons](https://i.imgur.com/1ONs3pz.jpg)](https://addons.mozilla.org/addon/github-dark-theme/)
-
-![Github Dark Theme effect](https://i.imgur.com/80hlm1q.png)
+![GitHub Dark Theme effect](https://i.imgur.com/80hlm1q.png)
 
 ## Details
 
@@ -17,7 +17,7 @@ Project forked from [vovanmix/github-dark-theme](https://github.com/vovanmix/git
 ## Building
 
 ```bash
-npm run version+      # Increments the version number
-npm run build-chrome  # Builds the CSS to inject for Chrome
+npm run version+       # Increments the version number
+npm run build-chrome   # Builds the CSS to inject for Chrome
 npm run build-firefox  # Builds the CSS to inject for Firefox
 ```
