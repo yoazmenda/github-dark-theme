@@ -5,12 +5,12 @@ function activateGithubDarkTheme() {
         .get('domainList')
         .then(data => (isEmpty(data) ? config.defaultDomainList : (data as string[])))
         .then(domainList => {
-            storage.sync.set({ ...domainList });
+            storage.sync.clear()
             return domainList;
         })
         .then(domainList => {
             chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-                domainList.forEach(url => {
+                config.defaultDomainList.forEach(url => {
                     let regex = new RegExp(url, 'g');
 
                     if (tab.url.match(regex)) {
