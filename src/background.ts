@@ -36,17 +36,14 @@ const addDomainListener = () => {
     });
 };
 
-const setUninstallUrl = () => {
-    chrome.runtime.setUninstallURL(
-        'https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__c9PL4pURTlJSFdFUzZUSzNBNUs4N0JaQlhEUkRBTy4u',
-        () => {
-            console.log('We are sorry to see you go! :(');
-        }
-    );
+const setUninstallQuestionnaire = () => {
+    chrome.runtime.setUninstallURL(config.uninstallQuestionnaire, () => {
+        console.log('We are sorry to see you go! :(');
+    });
 };
 
 function activateGithubDarkTheme() {
-    setUninstallUrl();
+    setUninstallQuestionnaire();
     storage.sync
         .get(config.nameOfDomainList)
         .then(data => {
