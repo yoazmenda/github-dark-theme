@@ -21,7 +21,7 @@ const addDomainListener = () => {
     chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         if (!tab) return;
         if (!tab.url) return;
-        storage.sync.get(config.nameOfDomainList).then(data => {
+        storage.sync.get(config.storage.nameOfDomainList).then(data => {
             console.log(data.domainList);
             data.domainList.forEach((url: string) => {
                 let regex = new RegExp(`${url}/`, 'g');
@@ -45,7 +45,7 @@ const setUninstallQuestionnaire = () => {
 function activateGithubDarkTheme() {
     setUninstallQuestionnaire();
     storage.sync
-        .get(config.nameOfDomainList)
+        .get(config.storage.nameOfDomainList)
         .then(data => {
             if (isEmpty(data)) {
                 data = { domainList: config.defaultDomainList };

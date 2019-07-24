@@ -19,7 +19,7 @@ module app {
 
         private init = () => {
             storage.sync
-                .get(config.nameOfDomainList)
+                .get(config.storage.nameOfDomainList)
                 .then(data => {
                     this.domainList = data.domainList as string[];
                     this.scope.$apply();
