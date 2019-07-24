@@ -6,7 +6,7 @@ const init = (domainList: string[]) => {
         if (!tab) return;
         if (!tab.url) return;
         domainList.forEach(url => {
-            let regex = new RegExp(url, 'g');
+            let regex = new RegExp(`${url}/`, 'g');
             if (tab.url.match(regex)) {
                 chrome.tabs.insertCSS(tab.id, {
                     file: 'app/app.css',
@@ -24,7 +24,7 @@ const addDomainListener = () => {
         storage.sync.get(config.nameOfDomainList).then(data => {
             console.log(data.domainList);
             data.domainList.forEach((url: string) => {
-                let regex = new RegExp(url, 'g');
+                let regex = new RegExp(`${url}/`, 'g');
                 if (tab.url.match(regex)) {
                     chrome.tabs.insertCSS(tab.id, {
                         file: 'app/app.css',
@@ -36,7 +36,17 @@ const addDomainListener = () => {
     });
 };
 
+const setUninstallUrl = () => {
+    chrome.runtime.setUninstallURL(
+        'https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__c9PL4pURTlJSFdFUzZUSzNBNUs4N0JaQlhEUkRBTy4u',
+        () => {
+            console.log('We are sorry to see you go! :(');
+        }
+    );
+};
+
 function activateGithubDarkTheme() {
+    setUninstallUrl();
     storage.sync
         .get(config.nameOfDomainList)
         .then(data => {
