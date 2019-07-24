@@ -60,3 +60,20 @@ table.capped-list tr:nth-child(even) {
 .access-token .token-description {
     color: $link-color !important;
 }
+
+/* Scroll bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    margin: 2px 0 2px 0;
+    background-color: $private-bg;
+}
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: $light-border-color;
+}
