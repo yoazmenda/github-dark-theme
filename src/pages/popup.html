@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>GitHub Dark Theme</title>
         <link rel="stylesheet" type="text/css" href="bulma.min.css" />
+        <link rel="stylesheet" type="text/css" href="bulma-extensions.min.css" />
         <style>
             body {
                 width: 400px;
@@ -55,17 +56,23 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p>
-                        Something goes wrong?
-                        <button class="button is-small is-primary" ng-click="ctrl.reset()">RESET</button> domain list
-                        and
-                        <a
-                            target="_blank"
-                            href="https://github.com/poychang/github-dark-theme/issues"
-                            class="has-text-primary"
-                            >submit issues</a
-                        >.
-                    </p>
+                    <div class="message is-warning">
+                        <div class="message-body">
+                            <p>
+                                Something goes wrong?
+                            </p>
+                            <p>
+                                <button class="button is-small is-warning" ng-click="ctrl.reset()">Reset</button> domain
+                                list or
+                                <a
+                                    target="_blank"
+                                    href="https://github.com/poychang/github-dark-theme/issues"
+                                    class="has-text-dark"
+                                    >submit issues</a
+                                >.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

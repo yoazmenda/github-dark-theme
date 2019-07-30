@@ -68,6 +68,7 @@ module.exports = {
             [
                 { from: './bulma/css/bulma.min.css', to: './bulma.min.css' },
                 { from: './bulma/css/bulma.css.map', to: './bulma.css.map' },
+                { from: './bulma-extensions/dist/css/bulma-extensions.min.css', to: './bulma-extensions.min.css' },
             ],
             {
                 context: 'node_modules',

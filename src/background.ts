@@ -1,13 +1,14 @@
-import { config, isEmpty, storage } from './libs';
+import { config, isEmpty, fetchDomainString, storage } from './libs';
 
 const init = (domainList: string[]) => {
     console.log(domainList);
     chrome.tabs.getCurrent(tab => {
         if (!tab) return;
         if (!tab.url) return;
-        domainList.forEach(url => {
-            let regex = new RegExp(`${url}/`, 'g');
-            if (tab.url.match(regex)) {
+        domainList.forEach(domain => {
+            let regex = new RegExp(`${domain}`, 'g');
+            let currentDomain = fetchDomainString(tab.url);
+            if (currentDomain.match(regex)) {
                 chrome.tabs.insertCSS(tab.id, {
                     file: 'app/app.css',
                     runAt: 'document_start',
@@ -23,9 +24,10 @@ const addDomainListener = () => {
         if (!tab.url) return;
         storage.sync.get(config.storage.nameOfDomainList).then(data => {
             console.log(data.domainList);
-            data.domainList.forEach((url: string) => {
-                let regex = new RegExp(`${url}/`, 'g');
-                if (tab.url.match(regex)) {
+            data.domainList.forEach((domain: string) => {
+                let regex = new RegExp(`${domain}`, 'g');
+                let currentDomain = fetchDomainString(tab.url);
+                if (currentDomain.match(regex)) {
                     chrome.tabs.insertCSS(tab.id, {
                         file: 'app/app.css',
                         runAt: 'document_start',
