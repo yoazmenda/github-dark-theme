@@ -1,20 +1,13 @@
-import { config, isEmpty, fetchDomainString, storage } from './libs';
+import { config } from './config';
+import { isEmpty, fetchDomainString, fetchUrlString, isUrlInList, storage } from './libs';
 
-const init = (domainList: string[]) => {
+const initGithubDarkTheme = (domainList: string[]) => {
     console.log(domainList);
     chrome.tabs.getCurrent(tab => {
         if (!tab) return;
         if (!tab.url) return;
-        domainList.forEach(domain => {
-            let regex = new RegExp(`${domain}`, 'g');
-            let currentDomain = fetchDomainString(tab.url);
-            if (currentDomain.match(regex)) {
-                chrome.tabs.insertCSS(tab.id, {
-                    file: 'app/app.css',
-                    runAt: 'document_start',
-                });
-            }
-        });
+        if (isUrlInList(fetchUrlString(tab.url), config.excludeUrlList)) return;
+        if (isUrlInList(fetchDomainString(tab.url), domainList)) insertCSS(tab.id);
     });
 };
 
@@ -22,19 +15,19 @@ const addDomainListener = () => {
     chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         if (!tab) return;
         if (!tab.url) return;
+        if (isUrlInList(fetchUrlString(tab.url), config.excludeUrlList)) return;
+
         storage.sync.get(config.storage.nameOfDomainList).then(data => {
-            console.log(data.domainList);
-            data.domainList.forEach((domain: string) => {
-                let regex = new RegExp(`${domain}`, 'g');
-                let currentDomain = fetchDomainString(tab.url);
-                if (currentDomain.match(regex)) {
-                    chrome.tabs.insertCSS(tab.id, {
-                        file: 'app/app.css',
-                        runAt: 'document_start',
-                    });
-                }
-            });
+            console.table('Domain List', data.domainList);
+            if (isUrlInList(fetchDomainString(tab.url), data.domainList)) insertCSS(tab.id);
         });
+    });
+};
+
+const insertCSS = (id: number) => {
+    chrome.tabs.insertCSS(id, {
+        file: 'app/app.css',
+        runAt: 'document_start',
     });
 };
 
@@ -55,7 +48,7 @@ function activateGithubDarkTheme() {
             }
             return data.domainList as string[];
         })
-        .then(init)
+        .then(initGithubDarkTheme)
         .finally(addDomainListener);
 }
 

@@ -1,5 +1,6 @@
 import * as angular from 'angular';
-import { config, fetchDomainString, storage } from './libs';
+import { config } from "./config";
+import { fetchDomainString, storage } from './libs';
 
 module app {
     'use strict';

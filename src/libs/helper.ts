@@ -1,9 +1,24 @@
 function fetchDomainString(url: string): string {
     if (!url) return '';
 
-    let result = url.match(
-        /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/g
-    );
+    let result = url.match(/([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?/g);
+
+    return result === null ? '' : result[0];
+}
+
+function isUrlInList(url: string, list: string[], endWithWildcard: boolean = false) {
+    var result = false;
+    list.forEach((str: string) => {
+        let regex = new RegExp(`^${str}${endWithWildcard ? '\\w*' : ''}`, 'g');
+        result = result || url.match(regex) ? true : false;
+    });
+    return result;
+}
+
+function fetchUrlString(url: string): string {
+    if (!url) return '';
+
+    let result = url.match(/([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?(\/.*)?$/g);
 
     return result === null ? '' : result[0];
 }
@@ -37,5 +52,5 @@ function queryManifest() {
     return chrome.runtime.getManifest().content_scripts;
 }
 
-export { fetchDomainString, isEmpty };
+export { fetchDomainString, fetchUrlString, isUrlInList, isEmpty };
 export { queryTabInfo, queryManifest };

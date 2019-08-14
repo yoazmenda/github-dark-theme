@@ -1,3 +1,2 @@
-export { config } from './config';
-export { fetchDomainString, isEmpty } from './helper';
+export { fetchDomainString, fetchUrlString, isUrlInList, isEmpty } from './helper';
 export { storage } from './storage-promise';
