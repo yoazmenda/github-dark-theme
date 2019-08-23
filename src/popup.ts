@@ -1,5 +1,5 @@
 import * as angular from 'angular';
-import { config } from "./config";
+import { config } from './config';
 import { fetchDomainString, storage } from './libs';
 
 module app {
@@ -52,6 +52,12 @@ module app {
             this.domainList = config.defaultDomainList;
             storage.sync.clear().then(() => {
                 storage.sync.set({ domainList: config.defaultDomainList });
+            });
+        };
+
+        public navigate = (domain: string) => {
+            chrome.tabs.create({ active: true, url: `http://${domain}` }, tab => {
+                console.log(tab);
             });
         };
     }

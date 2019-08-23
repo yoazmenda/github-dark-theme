@@ -29,7 +29,7 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="domain in ctrl.domainList track by $index">
-                                <td>{{ domain }}</td>
+                                <td><a ng-click="ctrl.navigate(domain)">{{ domain }}</a></td>
                                 <td>
                                     <button
                                         class="button is-small is-fullwidth is-danger"
