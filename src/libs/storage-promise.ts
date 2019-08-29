@@ -1,3 +1,5 @@
+// TODO: Decoupling Chrome instance by https://github.com/mozilla/webextension-polyfill
+
 // sync
 function syncGet(keys: string | Object | string[]): Promise<any> {
     let promise = new Promise((resolve, reject) => {
