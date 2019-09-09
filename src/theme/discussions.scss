@@ -182,13 +182,13 @@ body {
         border-color: $border-color !important;
     }
     .timeline-comment {
-        color: $text-color !important;
         background-color: $comment-bg !important;
         border-color: $border-color !important;
-    }
-    .timeline-comment.current-user {
-        background-color: $comment-bg !important;
-        border-color: $border-color !important;
+
+        &.current-user{
+            background-color: $comment-bg !important;
+            border-color: $border-color !important;
+        }
     }
     .thread-subscription-status {
         background-color: $bg-color !important;
