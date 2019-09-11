@@ -48,11 +48,11 @@ body {
         color: $link-color !important;
     }
     .blankslate {
-        background-color: #31363f !important;
+        background-color: $block-bg !important;
         border-color: $border-color !important;
     }
     .menu {
-        background-color: #31363f !important;
+        background-color: $block-bg !important;
         border-color: $border-color !important;
     }
     .menu-item {
@@ -228,7 +228,7 @@ body {
         border-top: 1px solid $border-color !important;
     }
     .dashboard-notice {
-        background-color: #31363f !important;
+        background-color: $block-bg !important;
         border: solid 1px $border-color !important;
         h2 {
             color: $text-color !important;
@@ -301,7 +301,7 @@ body {
         border-color: $border-color !important;
     }
     :not(.markdown-body code) .Box {
-        background-color: #31363f !important;
+        background-color: $block-bg !important;
         border-color: $border-color !important;
     }
     .full-commit {
@@ -315,7 +315,7 @@ body {
             color: $link-color !important;
         }
         .commit-meta {
-            background-color: #31363f !important;
+            background-color: $block-bg !important;
             border-color: $border-color !important;
         }
     }
