@@ -12,6 +12,7 @@ module app {
         private scope: IPopupScope;
         public domainList: string[];
         public yourDomain: string;
+        public useSystemPrefers: boolean;
 
         constructor($scope: IPopupScope) {
             this.scope = $scope;
@@ -59,6 +60,11 @@ module app {
             chrome.tabs.create({ active: true, url: `http://${domain}` }, tab => {
                 console.log(tab);
             });
+        };
+
+        public setSystemPrefers = async (value: boolean) => {
+            //TODO: save config into storage
+            this.useSystemPrefers = value;
         };
     }
 

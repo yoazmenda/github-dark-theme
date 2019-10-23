@@ -1,2 +1,4 @@
 export { fetchDomainString, fetchUrlString, isUrlInList, isEmpty } from './helper';
-export { storage } from './storage-promise';
+export { queryTabInfo, queryManifest } from './helper';
+export { inSystemDarkMode } from './helper';
+export { storage } from './storage';

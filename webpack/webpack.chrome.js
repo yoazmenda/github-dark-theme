@@ -9,6 +9,12 @@ module.exports = merge(common, {
         path: path.join(__dirname, '../dist-chrome/app'),
         filename: '[name].js',
     },
+    optimization: {
+        splitChunks: {
+            name: 'vendor',
+            chunks: 'initial',
+        },
+    },
     plugins: [
         // copy manifest
         new CopyPlugin([{ from: './manifest-chrome.json', to: '../manifest.json' }], {

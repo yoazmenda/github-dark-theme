@@ -52,5 +52,10 @@ function queryManifest() {
     return chrome.runtime.getManifest().content_scripts;
 }
 
+function inSystemDarkMode(): boolean{
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
 export { fetchDomainString, fetchUrlString, isUrlInList, isEmpty };
 export { queryTabInfo, queryManifest };
+export { inSystemDarkMode };

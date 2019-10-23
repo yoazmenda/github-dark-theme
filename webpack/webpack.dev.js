@@ -9,4 +9,11 @@ module.exports = merge(common, {
         path: path.join(__dirname, '../dist/app'),
         filename: '[name].js',
     },
+    optimization: {
+        minimize: false,
+        splitChunks: {
+            name: 'vendor',
+            chunks: 'initial',
+        },
+    },
 });

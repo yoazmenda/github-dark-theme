@@ -9,6 +9,13 @@ module.exports = merge(common, {
         path: path.join(__dirname, '../dist-firefox/app'),
         filename: '[name].js',
     },
+    optimization: {
+        minimize: false,
+        splitChunks: {
+            name: 'vendor',
+            chunks: 'initial',
+        },
+    },
     plugins: [
         // copy manifest
         new CopyPlugin([{ from: './manifest-firefox.json', to: '../manifest.json' }], {
