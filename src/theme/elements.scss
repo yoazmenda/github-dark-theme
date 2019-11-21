@@ -121,6 +121,7 @@ body {
         color: $link-color-selected !important;
     }
     .select-menu-item {
+        color: $link-color-selected !important;
         border-color: $border-color !important;
         background-color: $dropdown-bg !important;
         &:hover,
