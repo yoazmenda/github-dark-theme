@@ -170,7 +170,7 @@ body {
     .subnav-search-context .btn {
         color: $link-color !important;
     }
-    .btn-link {
+    .btn-link:not(.IssueLabel) {
         color: $link-color !important;
     }
     .social-count {
