@@ -37,7 +37,7 @@ const setUninstallQuestionnaire = () => {
     });
 };
 
-function activateGithubDarkTheme() {
+const activateGithubDarkTheme = () => {
     setUninstallQuestionnaire();
     storage.sync
         .get(config.storage.nameOfDomainList)
@@ -50,6 +50,6 @@ function activateGithubDarkTheme() {
         })
         .then(initGithubDarkTheme)
         .finally(addDomainListener);
-}
+};
 
 activateGithubDarkTheme();

@@ -34,14 +34,20 @@ module app {
         };
 
         public add = () => {
-            let domain = fetchDomainString(this.yourDomain);
-            this.yourDomain = '';
+            chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+                let currentTabUrl = tabs[0].url;
+                let url = this.yourDomain ? this.yourDomain : currentTabUrl;
+                let domain = fetchDomainString(url);
 
-            if (domain === '') return;
-            if (this.domainList.includes(domain)) return;
+                this.yourDomain = '';
 
-            this.domainList.push(domain);
-            storage.sync.set({ domainList: this.domainList });
+                if (domain === '') return;
+                if (this.domainList.includes(domain)) return;
+
+                this.domainList.push(domain);
+                this.scope.$apply();
+                storage.sync.set({ domainList: this.domainList });
+            });
         };
 
         public remove = (domain: string) => {
