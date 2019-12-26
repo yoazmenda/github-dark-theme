@@ -19,6 +19,12 @@ body {
         background: $head-bg !important;
         border-color: $border-color !important;
     }
+    /* Repo label (i.e. Private, Archived) */
+    .repohead .Label--outline,
+    .repo-list .Label--outline {
+        color: $text-color !important;
+        border-color: $light-border-color !important;
+    }
     .site-header {
         background: $head-bg !important;
         border-color: $border-color !important;
@@ -229,9 +235,9 @@ body {
     }
     .news .Details button {
         border-top-color: $border-color !important;
-        
+
         &:hover {
-            background: transparent !important; 
+            background: transparent !important;
             text-decoration: underline !important;
         }
     }
@@ -315,6 +321,10 @@ body {
         border-color: $border-color !important;
     }
     *:not(code) .Box {
+        background-color: $block-bg !important;
+        border-color: $border-color !important;
+    }
+    .dashboard .js-all-activity-header + div {
         background-color: $block-bg !important;
         border-color: $border-color !important;
     }
