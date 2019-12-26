@@ -3,6 +3,7 @@ const versionFileList = [
     './package.json',
     './package-lock.json',
     './src/manifest/manifest-ref.json',
+    './src/manifest/manifest-edge.json',
     './src/manifest/manifest-chrome.json',
     './src/manifest/manifest-firefox.json',
 ];
