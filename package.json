@@ -1,6 +1,6 @@
 {
     "name": "github-dark-theme",
-    "version": "1.0.35",
+    "version": "1.0.36",
     "description": "change appearance of all GitHub pages to a dark theme",
     "license": "MIT",
     "author": "Poy Chang <poypost@gmail.com>",
@@ -16,6 +16,7 @@
         "serve": "live-server",
         "watch": "webpack --config webpack/webpack.dev.js --watch",
         "build": "webpack --config webpack/webpack.prod.js",
+        "build-edge": "webpack --config webpack/webpack.edge.js",
         "build-chrome": "webpack --config webpack/webpack.chrome.js",
         "build-firefox": "webpack --config webpack/webpack.firefox.js",
         "clean": "rimraf dist && rimraf dist-chrome && rimraf dist-firefox",
