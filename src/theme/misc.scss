@@ -104,14 +104,12 @@ table.capped-list tr:nth-child(even) {
 /* Emoji Picker-specific */
 .js-emoji-picker {
     .js-emoji-button {
-        // background-color: $bg-color !important;
-        // background: $button-bg-image !important;
-        background: radial-gradient(circle, #424549, #535659) !important;
+        background-color: transparent !important;
         color: $link-color !important;
         justify-content: center !important;
 
         &:hover {
-            background: radial-gradient(circle, #535659, #424549) !important;
+            background: $button-bg-image-hover !important;
         }
 
         &.selected-emoji {
