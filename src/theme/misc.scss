@@ -100,3 +100,20 @@ table.capped-list tr:nth-child(even) {
 .jump-to-suggestion-name mark {
     color: $bright-text-color !important;
 }
+
+/* Emoji Picker-specific */
+.js-emoji-picker {
+    .js-emoji-button {
+        background-color: transparent !important;
+        color: $link-color !important;
+        justify-content: center !important;
+
+        &:hover {
+            background: $button-bg-image-hover !important;
+        }
+
+        &.selected-emoji {
+            background: $button-active-color !important;
+        }
+    }
+}

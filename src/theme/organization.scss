@@ -46,3 +46,24 @@
 .Subhead-description {
     color: $faded-link-color !important;
 }
+
+.SelectMenu {
+    .SelectMenu-modal {
+        border: 1px solid $border-color !important;
+
+        .SelectMenu-header {
+            background-color: $bg-color !important;
+        }
+        .SelectMenu-item {
+            background-color: $block-bg !important;
+            border-bottom: 1px solid $border-color !important;
+        }
+        .SelectMenu-list {
+            border-top: 1px solid $border-color !important;
+        }
+
+        footer {
+            border-top: 1px solid $border-color !important;
+        }
+    }
+}
