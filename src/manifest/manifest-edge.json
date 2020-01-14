@@ -15,7 +15,7 @@
     },
     "permissions": [
         "storage",
-        "<all_urls>"
+        "*://*/*"
     ],
     "icons": {
         "16": "icons/icon16.png",
