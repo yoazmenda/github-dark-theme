@@ -420,8 +420,22 @@ body {
             background-color: transparent !important;
         }
 
-        & > main > div.border-bottom.border-gray-light {
-            background-color: $bg-color !important;
+        & > main{
+            & > div.border-bottom.border-gray-light {
+                background-color: $bg-color !important;
+            }
+
+            & > .site-subnav + div{
+                background-color: $bg-color !important;
+
+                .bg-blue-light{
+                    background-color: transparent !important;
+                }
+
+                .text-gray-light{
+                    color: $text-color !important;
+                }
+            }
         }
     }
     .note,
