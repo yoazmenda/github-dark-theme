@@ -66,4 +66,22 @@
             border-top: 1px solid $border-color !important;
         }
     }
+
+    /* For select menus with tabs, like the branch selector */
+    .SelectMenu-filter,
+    .SelectMenu-tabs,
+    .SelectMenu-list,
+    .SelectMenu-modal {
+        background: $block-bg !important;
+    }
+
+    .SelectMenu-filter {
+        border-color: $block-bg !important;
+    }
+
+    .SelectMenu-tab[aria-selected="true"] {
+        color: $text-color !important;
+        background: $block-bg !important;
+        border-color: $tag-bg-color !important;
+    }
 }
