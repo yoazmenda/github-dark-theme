@@ -3,6 +3,11 @@
 body {
     background-color: $bg-color !important;
     color: $text-color !important;
+    &.page-responsive{
+        .pagehead{
+            background-color: $bg-color !important;
+        }
+    }
     .reponav-item {
         color: $faded-link-color !important;
         &.selected {
