@@ -1,14 +1,14 @@
 import { config } from './config';
-import { isEmpty, fetchDomainString, fetchUrlString, isUrlInList, storage } from './libs';
+import { isEmpty, fetchDomainString, fetchUrlString, isUrlInList, storage, tabs, runtime } from './libs';
 
 const initGithubDarkTheme = (domainList: string[]) => {
-    console.log(domainList);
-    chrome.tabs.getCurrent(tab => {
-        if (!tab) return;
-        if (!tab.url) return;
-        if (isUrlInList(fetchUrlString(tab.url), config.excludeUrlList)) return;
-        if (isUrlInList(fetchDomainString(tab.url), domainList)) insertCSS(tab.id);
-    });
+    console.table('Domain List', domainList);
+    const tab = tabs.getCurrentTab();
+
+    if (!tab) return;
+    if (!tab.url) return;
+    if (isUrlInList(fetchUrlString(tab.url), config.excludeUrlList)) return;
+    if (isUrlInList(fetchDomainString(tab.url), domainList)) tabs.insertCSS(tab.id, 'app/app.css');
 };
 
 const addDomainListener = () => {
@@ -19,26 +19,13 @@ const addDomainListener = () => {
 
         storage.sync.get(config.storage.nameOfDomainList).then(data => {
             console.table('Domain List', data.domainList);
-            if (isUrlInList(fetchDomainString(tab.url), data.domainList)) insertCSS(tab.id);
+            if (isUrlInList(fetchDomainString(tab.url), data.domainList)) tabs.insertCSS(tab.id, 'app/app.css');
         });
     });
 };
 
-const insertCSS = (id: number) => {
-    chrome.tabs.insertCSS(id, {
-        file: 'app/app.css',
-        runAt: 'document_start',
-    });
-};
-
-const setUninstallQuestionnaire = () => {
-    chrome.runtime.setUninstallURL(config.uninstallQuestionnaire, () => {
-        console.log('We are sorry to see you go! :(');
-    });
-};
-
-const activateGithubDarkTheme = () => {
-    setUninstallQuestionnaire();
+(function() {
+    runtime.setUninstallURL(config.uninstallQuestionnaire);
     storage.sync
         .get(config.storage.nameOfDomainList)
         .then(data => {
@@ -50,6 +37,4 @@ const activateGithubDarkTheme = () => {
         })
         .then(initGithubDarkTheme)
         .finally(addDomainListener);
-};
-
-activateGithubDarkTheme();
+})();

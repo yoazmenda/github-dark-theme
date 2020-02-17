@@ -29,26 +29,26 @@
     "dependencies": {
         "@types/angular": "^1.6.57",
         "angular": "^1.7.9",
-        "bulma": "^0.7.5",
+        "bulma": "^0.8.0",
         "bulma-extensions": "^6.2.7"
     },
     "devDependencies": {
-        "@types/chrome": "0.0.91",
-        "@types/jquery": "^3.3.31",
+        "@types/chrome": "0.0.95",
+        "@types/jquery": "^3.3.32",
         "@wext/shipit": "^0.2.1",
         "copy-webpack-plugin": "^5.0.5",
         "css-loader": "^3.1.0",
         "extract-text-webpack-plugin": "^4.0.0-beta.0",
         "live-server": "^1.2.1",
-        "node-sass": "^4.13.0",
-        "rimraf": "^2.7.1",
+        "node-sass": "^4.13.1",
+        "rimraf": "^3.0.2",
         "sass-loader": "^7.3.1",
         "style-loader": "^0.23.1",
         "ts-loader": "^6.2.1",
-        "typescript": "~3.7.3",
+        "typescript": "~3.7.5",
         "url-loader": "^2.3.0",
-        "webpack": "~4.37.0",
-        "webpack-cli": "~3.3.10",
+        "webpack": "~4.41.6",
+        "webpack-cli": "~3.3.11",
         "webpack-merge": "~4.2.2"
     }
 }

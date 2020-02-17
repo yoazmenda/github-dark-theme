@@ -1,6 +1,6 @@
 import * as angular from 'angular';
 import { config } from './config';
-import { fetchDomainString, storage } from './libs';
+import { fetchDomainString, storage, tabs } from './libs';
 
 module app {
     'use strict';
@@ -34,20 +34,18 @@ module app {
         };
 
         public add = () => {
-            chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-                let currentTabUrl = tabs[0].url;
-                let url = this.yourDomain ? this.yourDomain : currentTabUrl;
-                let domain = fetchDomainString(url);
+            var activeTabInfo = tabs.getCurrentTab()
+            let url = this.yourDomain ? this.yourDomain : activeTabInfo.url;
+            let domain = fetchDomainString(url);
 
-                this.yourDomain = '';
+            this.yourDomain = '';
 
-                if (domain === '') return;
-                if (this.domainList.includes(domain)) return;
+            if (domain === '') return;
+            if (this.domainList.includes(domain)) return;
 
-                this.domainList.push(domain);
-                this.scope.$apply();
-                storage.sync.set({ domainList: this.domainList });
-            });
+            this.domainList.push(domain);
+            this.scope.$apply();
+            storage.sync.set({ domainList: this.domainList });
         };
 
         public remove = (domain: string) => {
@@ -63,9 +61,7 @@ module app {
         };
 
         public navigate = (domain: string) => {
-            chrome.tabs.create({ active: true, url: `http://${domain}` }, tab => {
-                console.log(tab);
-            });
+            tabs.createTab(domain);
         };
 
         public setSystemPrefers = async (value: boolean) => {
