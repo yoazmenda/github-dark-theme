@@ -201,8 +201,8 @@ const managedClear = (): Promise<any> => {
     return promise;
 };
 
-// onChanged
-const onChangedAddListener = (): Promise<any> => {
+// misc
+const addOnChangedListener = (): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.onChanged.addListener((changes, areaName) => {
             let err = chrome.runtime.lastError;
@@ -214,6 +214,16 @@ const onChangedAddListener = (): Promise<any> => {
         });
     });
     return promise;
+};
+const showStorageOnConsole = (key: string) => {
+    Promise.all([syncGet(key), localGet(key), managedGet(key)]).then(result => {
+        console.log(`${key} from storage.sync`);
+        console.log(result[0]);
+        console.log(`${key} from storage.local`);
+        console.log(result[1]);
+        console.log(`${key} from storage.managed`);
+        console.log(result[2]);
+    });
 };
 
 const storage = {
@@ -238,8 +248,9 @@ const storage = {
         remove: managedRemove,
         clear: managedClear,
     },
-    onChanged: {
-        addListener: onChangedAddListener,
+    misc: {
+        addOnChangedListener: addOnChangedListener,
+        showStorageOnConsole: showStorageOnConsole,
     },
 };
 

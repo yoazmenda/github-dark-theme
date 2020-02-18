@@ -12,7 +12,7 @@ module app {
         private scope: IPopupScope;
         public domainList: string[];
         public yourDomain: string;
-        public useSystemPrefers: boolean;
+        public useDarkTheme: boolean;
 
         constructor($scope: IPopupScope) {
             this.scope = $scope;
@@ -21,7 +21,7 @@ module app {
 
         private init = () => {
             storage.sync
-                .get(config.storage.nameOfDomainList)
+                .get(config.storageDomainList)
                 .then(data => {
                     this.domainList = data.domainList as string[];
                     this.scope.$apply();
@@ -64,9 +64,9 @@ module app {
             tabs.createTab(domain);
         };
 
-        public setSystemPrefers = async (value: boolean) => {
+        public toggleDarkTheme = async (value: boolean) => {
             //TODO: save config into storage
-            this.useSystemPrefers = value;
+            this.useDarkTheme = value;
         };
     }
 

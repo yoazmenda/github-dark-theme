@@ -3,7 +3,7 @@
 const getCurrentTab = (): TabInfo => {
     if (!chrome.tabs) return;
 
-    let tabInfo = new TabInfo();
+    let tabInfo = {} as TabInfo;
     const queryInfo = {
         active: true,
         currentWindow: true,
@@ -38,7 +38,7 @@ const tabs = {
     insertCSS: insertCSS,
 };
 
-class TabInfo {
+interface TabInfo {
     id: number;
     title: string;
     url: string;
