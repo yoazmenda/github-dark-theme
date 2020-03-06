@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Chrome Extension TypeScript Starter",
     "description": "Chrome Extension, TypeScript, Visual Studio Code",
-    "version": "1.0.43",
+    "version": "1.0.44",
     "options_ui": {
         "page": "options.html",
         "chrome_style": true
@@ -31,6 +31,10 @@
     "permissions": [
         "storage",
         "*://*/*",
+        "<all_urls>"
+    ],
+    "optional_permissions": [
+        "notifications",
         "<all_urls>"
     ],
     "icons": {

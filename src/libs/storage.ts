@@ -1,7 +1,7 @@
 // TODO: Decoupling Chrome instance by https://github.com/mozilla/webextension-polyfill
 
 // sync
-function syncGet(keys: string | Object | string[]): Promise<any> {
+const syncGet = (keys: string | Object | string[]): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.sync.get(keys, items => {
             let err = chrome.runtime.lastError;
@@ -13,8 +13,8 @@ function syncGet(keys: string | Object | string[]): Promise<any> {
         });
     });
     return promise;
-}
-function syncSet(items: Object): Promise<any> {
+};
+const syncSet = (items: Object): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.sync.set(items, () => {
             let err = chrome.runtime.lastError;
@@ -26,8 +26,8 @@ function syncSet(items: Object): Promise<any> {
         });
     });
     return promise;
-}
-function syncGetBytesInUse(keys: string | string[]): Promise<any> {
+};
+const syncGetBytesInUse = (keys: string | string[]): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.sync.getBytesInUse(keys, items => {
             let err = chrome.runtime.lastError;
@@ -39,8 +39,8 @@ function syncGetBytesInUse(keys: string | string[]): Promise<any> {
         });
     });
     return promise;
-}
-function syncRemove(keys: string | string[]) {
+};
+const syncRemove = (keys: string | string[]) => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.sync.remove(keys, () => {
             let err = chrome.runtime.lastError;
@@ -52,8 +52,8 @@ function syncRemove(keys: string | string[]) {
         });
     });
     return promise;
-}
-function syncClear() {
+};
+const syncClear = () => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.sync.clear(() => {
             let err = chrome.runtime.lastError;
@@ -65,10 +65,10 @@ function syncClear() {
         });
     });
     return promise;
-}
+};
 
 // local
-function localGet(keys: string | Object | string[]): Promise<any> {
+const localGet = (keys: string | Object | string[]): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.local.get(keys, items => {
             let err = chrome.runtime.lastError;
@@ -80,8 +80,8 @@ function localGet(keys: string | Object | string[]): Promise<any> {
         });
     });
     return promise;
-}
-function localSet(items: Object): Promise<any> {
+};
+const localSet = (items: Object): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.local.set(items, () => {
             let err = chrome.runtime.lastError;
@@ -93,8 +93,8 @@ function localSet(items: Object): Promise<any> {
         });
     });
     return promise;
-}
-function localGetBytesInUse(keys: string | string[]): Promise<any> {
+};
+const localGetBytesInUse = (keys: string | string[]): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.local.getBytesInUse(keys, items => {
             let err = chrome.runtime.lastError;
@@ -106,8 +106,8 @@ function localGetBytesInUse(keys: string | string[]): Promise<any> {
         });
     });
     return promise;
-}
-function localRemove(keys: string | string[]): Promise<any> {
+};
+const localRemove = (keys: string | string[]): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.local.remove(keys, () => {
             let err = chrome.runtime.lastError;
@@ -119,8 +119,8 @@ function localRemove(keys: string | string[]): Promise<any> {
         });
     });
     return promise;
-}
-function localClear(): Promise<any> {
+};
+const localClear = (): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.local.clear(() => {
             let err = chrome.runtime.lastError;
@@ -132,10 +132,10 @@ function localClear(): Promise<any> {
         });
     });
     return promise;
-}
+};
 
 // managed
-function managedGet(keys: string | Object | string[]): Promise<any> {
+const managedGet = (keys: string | Object | string[]): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.managed.get(keys, items => {
             let err = chrome.runtime.lastError;
@@ -147,8 +147,8 @@ function managedGet(keys: string | Object | string[]): Promise<any> {
         });
     });
     return promise;
-}
-function managedSet(items: Object): Promise<any> {
+};
+const managedSet = (items: Object): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.managed.set(items, () => {
             let err = chrome.runtime.lastError;
@@ -160,8 +160,8 @@ function managedSet(items: Object): Promise<any> {
         });
     });
     return promise;
-}
-function managedGetBytesInUse(keys: string | string[]): Promise<any> {
+};
+const managedGetBytesInUse = (keys: string | string[]): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.managed.getBytesInUse(keys, items => {
             let err = chrome.runtime.lastError;
@@ -173,8 +173,8 @@ function managedGetBytesInUse(keys: string | string[]): Promise<any> {
         });
     });
     return promise;
-}
-function managedRemove(keys: string | string[]): Promise<any> {
+};
+const managedRemove = (keys: string | string[]): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.managed.remove(keys, () => {
             let err = chrome.runtime.lastError;
@@ -186,8 +186,8 @@ function managedRemove(keys: string | string[]): Promise<any> {
         });
     });
     return promise;
-}
-function managedClear(): Promise<any> {
+};
+const managedClear = (): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.managed.clear(() => {
             let err = chrome.runtime.lastError;
@@ -199,10 +199,10 @@ function managedClear(): Promise<any> {
         });
     });
     return promise;
-}
+};
 
-// onChanged
-function onChangedAddListener(): Promise<any> {
+// misc
+const addOnChangedListener = (): Promise<any> => {
     let promise = new Promise((resolve, reject) => {
         chrome.storage.onChanged.addListener((changes, areaName) => {
             let err = chrome.runtime.lastError;
@@ -214,7 +214,17 @@ function onChangedAddListener(): Promise<any> {
         });
     });
     return promise;
-}
+};
+const showStorageOnConsole = (key: string) => {
+    Promise.all([syncGet(key), localGet(key), managedGet(key)]).then(result => {
+        console.log(`${key} from storage.sync`);
+        console.log(result[0]);
+        console.log(`${key} from storage.local`);
+        console.log(result[1]);
+        console.log(`${key} from storage.managed`);
+        console.log(result[2]);
+    });
+};
 
 const storage = {
     sync: {
@@ -238,8 +248,9 @@ const storage = {
         remove: managedRemove,
         clear: managedClear,
     },
-    onChanged: {
-        addListener: onChangedAddListener,
+    misc: {
+        addOnChangedListener: addOnChangedListener,
+        showStorageOnConsole: showStorageOnConsole,
     },
 };
 

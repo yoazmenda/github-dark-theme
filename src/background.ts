@@ -1,46 +1,20 @@
 import { config } from './config';
-import { isEmpty, fetchDomainString, fetchUrlString, isUrlInList, storage } from './libs';
+import { isEmpty, fetchDomainString, fetchUrlString, isUrlInList, storage, tabs, runtime } from './libs';
 
 const initGithubDarkTheme = (domainList: string[]) => {
-    console.log(domainList);
-    chrome.tabs.getCurrent(tab => {
-        if (!tab) return;
-        if (!tab.url) return;
-        if (isUrlInList(fetchUrlString(tab.url), config.excludeUrlList)) return;
-        if (isUrlInList(fetchDomainString(tab.url), domainList)) insertCSS(tab.id);
-    });
-};
-
-const addDomainListener = () => {
     chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         if (!tab) return;
         if (!tab.url) return;
         if (isUrlInList(fetchUrlString(tab.url), config.excludeUrlList)) return;
-
-        storage.sync.get(config.storage.nameOfDomainList).then(data => {
-            console.table('Domain List', data.domainList);
-            if (isUrlInList(fetchDomainString(tab.url), data.domainList)) insertCSS(tab.id);
-        });
+        if (isUrlInList(fetchDomainString(tab.url), domainList)) tabs.insertCSS(tab.id, config.cssFilePath);
     });
 };
 
-const insertCSS = (id: number) => {
-    chrome.tabs.insertCSS(id, {
-        file: 'app/app.css',
-        runAt: 'document_start',
-    });
-};
-
-const setUninstallQuestionnaire = () => {
-    chrome.runtime.setUninstallURL(config.uninstallQuestionnaire, () => {
-        console.log('We are sorry to see you go! :(');
-    });
-};
-
-const activateGithubDarkTheme = () => {
-    setUninstallQuestionnaire();
+(function() {
+    runtime.setUninstallURL(config.uninstallQuestionnaire);
+    storage.misc.showStorageOnConsole('domainList');
     storage.sync
-        .get(config.storage.nameOfDomainList)
+        .get(config.storageDomainList)
         .then(data => {
             if (isEmpty(data)) {
                 data = { domainList: config.defaultDomainList };
@@ -48,8 +22,5 @@ const activateGithubDarkTheme = () => {
             }
             return data.domainList as string[];
         })
-        .then(initGithubDarkTheme)
-        .finally(addDomainListener);
-};
-
-activateGithubDarkTheme();
+        .then(initGithubDarkTheme);
+})();
