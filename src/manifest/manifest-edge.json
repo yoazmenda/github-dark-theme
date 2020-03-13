@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "GitHub Dark Theme",
     "description": "A Dark theme for all of GitHub based on Atom One Dark.",
-    "version": "1.0.44",
+    "version": "1.0.45",
     "browser_action": {
         "default_icon": "icons/icon.png",
         "default_popup": "app/popup.html"
@@ -17,7 +17,9 @@
         "storage",
         "*://*/*"
     ],
-    "optional_permissions": [ "<all_urls>" ],
+    "optional_permissions": [
+        "<all_urls>"
+    ],
     "icons": {
         "16": "icons/icon16.png",
         "48": "icons/icon48.png",

@@ -34,7 +34,7 @@ module app {
         };
 
         public add = () => {
-            var activeTabInfo = tabs.getCurrentTab()
+            let activeTabInfo = tabs.getCurrentTab();
             let url = this.yourDomain ? this.yourDomain : activeTabInfo.url;
             let domain = fetchDomainString(url);
 
@@ -44,7 +44,6 @@ module app {
             if (this.domainList.includes(domain)) return;
 
             this.domainList.push(domain);
-            this.scope.$apply();
             storage.sync.set({ domainList: this.domainList });
         };
 
