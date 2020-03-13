@@ -24,11 +24,14 @@ module app {
                 .get(config.storageDomainList)
                 .then(data => {
                     this.domainList = data.domainList as string[];
-                    this.scope.$apply();
+                    console.log(this.domainList);
                 })
                 .catch(error => {
-                    console.log(error);
                     this.domainList = ['ERROR'];
+                    console.log(this.domainList);
+                    console.log(error);
+                })
+                .finally(() => {
                     this.scope.$apply();
                 });
         };
