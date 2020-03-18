@@ -78,3 +78,19 @@ pre {
 .pl-mi {
     color: #ccc !important;
 }
+
+/* # Code - Find File */
+
+input.tree-finder-input {
+    background-color: transparent !important;
+}
+
+.flash {
+    form.flash-close {
+        background-color: transparent !important;
+    }
+}
+
+a.js-tree-browser-result-anchor[aria-selected='true'] {
+    background-color: $border-color !important;
+}
