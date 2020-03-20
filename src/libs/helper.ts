@@ -24,6 +24,7 @@ const isUrlInList = (url: string, list: string[], endWithWildcard: boolean = fal
 };
 
 const isEmpty = (data: Object) => {
+    if (data === undefined || data === null) return true;
     return Object.getOwnPropertyNames(data).length === 0;
 };
 
