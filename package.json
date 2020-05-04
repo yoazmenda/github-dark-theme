@@ -1,6 +1,6 @@
 {
     "name": "github-dark-theme",
-    "version": "1.0.52",
+    "version": "1.0.53",
     "description": "change appearance of all GitHub pages to a dark theme",
     "license": "MIT",
     "author": "Poy Chang <poypost@gmail.com>",
@@ -49,6 +49,7 @@
         "ts-loader": "^6.2.2",
         "typescript": "~3.8.3",
         "url-loader": "^4.1.0",
+        "webextension-polyfill-ts": "^0.15.0",
         "webpack": "~4.42.1",
         "webpack-cli": "~3.3.11",
         "webpack-merge": "~4.2.2"
