@@ -6,6 +6,10 @@ body {
     &.page-responsive {
         .pagehead {
             background-color: $bg-color !important;
+
+            .UnderlineNav {
+                box-shadow: inset 0 -1px 0 $bg-color !important;
+            }
         }
     }
     .reponav-item {
@@ -426,8 +430,15 @@ body {
         background-color: $dropdown-bg !important;
         border-color: $border-color !important;
     }
-    .conversation-list-heading .inner {
-        background: $dropdown-bg;
+    .conversation-list-heading {
+        border-color: $border-color !important;
+
+        .inner {
+            background: $bg-color;
+        }
+    }
+    .simple-conversation-list>li {
+        border-color: $border-color !important;
     }
     .application-main {
         .flex-wrap {

@@ -1,7 +1,7 @@
 /* # Insights Pulse */
 
 .summary-stats li {
-    border-color: $bg-color;
+    border-color: $border-color !important;
 
     a:hover {
         background-color: #414650 !important;
@@ -50,6 +50,11 @@ table.capped-list tr:nth-child(even) {
 
 .network .current-repository {
     background-color: $private-bg !important;
+}
+
+img.network-tree {
+    filter: invert(1);
+    mix-blend-mode: lighten;
 }
 
 /* Marketplace */
