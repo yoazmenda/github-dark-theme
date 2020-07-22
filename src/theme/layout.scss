@@ -7,11 +7,13 @@ body {
         .pagehead {
             background-color: $bg-color !important;
 
-            .UnderlineNav {
-                box-shadow: inset 0 -1px 0 $bg-color !important;
-            }
         }
     }
+
+    .UnderlineNav {
+        box-shadow: inset 0 -1px 0 $bg-color !important;
+    }
+
     .reponav-item {
         color: $faded-link-color !important;
         &.selected {
@@ -75,6 +77,7 @@ body {
     }
     .menu-item {
         border-bottom: 1px solid $border-color !important;
+        background-color: $dropdown-bg !important;
     }
     .menu-item:hover {
         background-color: #41464f !important;
