@@ -3,8 +3,8 @@ github.zip
 npm-debug.log
 node_modules/
 tmp/
-dist/
-dist-edge/
-dist-chrome/
-dist-firefox/
-dist-safari/
+# dist/
+# dist-edge/
+# dist-chrome/
+# dist-firefox/
+# dist-safari/
